@@ -19,7 +19,7 @@
       <tr>
         <td><%= post.image %></td>
         <td><%= post.caption %></td>
-        <td><%= post.user_id %></td>
+        <td><%= post.user.email %></td>
         <td>
           <a href="/posts/<%= post.id %>" class="btn btn-primary">Show</a>
           <a href="/posts/<%= post.id %>/edit" class="btn btn-warning">Edit</a>
