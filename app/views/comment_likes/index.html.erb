@@ -16,7 +16,7 @@
 
       <% @comment_likes.each do |comment_like| %>
       <tr>
-        <td><%= comment_like.user_id %></td>
+        <td><%= comment_like.user.email %></td>
         <td><%= comment_like.comment_id %></td>
         <td>
           <a href="/comment_likes/<%= comment_like.id %>" class="btn btn-primary">Show</a>
