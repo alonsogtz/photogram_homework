@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "posts#index"
   # Routes for the Comment_like resource:
   # CREATE
   get "/comment_likes/new", :controller => "comment_likes", :action => "new"
