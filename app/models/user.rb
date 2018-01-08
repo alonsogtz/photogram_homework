@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :comment_likes,
+             :dependent => :destroy
+
   has_many   :likes,
              :class_name => "PostsLike",
              :dependent => :destroy
