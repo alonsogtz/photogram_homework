@@ -1,6 +1,6 @@
 class CommentLikesController < ApplicationController
   def index
-    @comment_likes = CommentLike.all
+    @comment_likes = CommentLike.page(params[:page]).per(10)
 
     render("comment_likes/index.html.erb")
   end
