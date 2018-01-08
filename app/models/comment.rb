@@ -11,6 +11,10 @@ class Comment < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :likes,
+             :through => :comment_likes,
+             :source => :user
+
   # Validations
 
 end
