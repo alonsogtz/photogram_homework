@@ -10,7 +10,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.page(params[:page]).per(10)
+    @q = Post.ransack(params[:q])
+    @posts = @q.result(:distinct => true).includes(:user, :comments, :likes, :commenters, :likers).page(params[:page]).per(10)
 
     render("posts/index.html.erb")
   end
