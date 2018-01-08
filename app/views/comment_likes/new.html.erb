@@ -33,7 +33,7 @@
           Comment
         </label>
 
-        <input type="text" id="comment_id" name="comment_id" placeholder="Comment" class="form-control" value="<%= @comment_like.comment_id %>">
+        <%= select_tag(:comment_id, options_from_collection_for_select(Comment.all, :id, :post_id, @comment_like.comment_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-success">
