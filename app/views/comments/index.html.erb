@@ -17,7 +17,7 @@
 
       <% @comments.each do |comment| %>
       <tr>
-        <td><%= comment.post_id %></td>
+        <td><%= comment.post.created_at %></td>
         <td><%= comment.commenter_id %></td>
         <td><%= comment.comment %></td>
         <td>
