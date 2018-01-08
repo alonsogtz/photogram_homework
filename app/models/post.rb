@@ -12,6 +12,10 @@ class Post < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :commenters,
+             :through => :likes,
+             :source => :commenter
+
   # Validations
 
 end
