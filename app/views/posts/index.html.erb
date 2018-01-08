@@ -17,7 +17,7 @@
 
       <% @posts.each do |post| %>
       <tr>
-        <td><%= post.image %></td>
+        <td><img src='<%= post.image %>' class='img-responsive'></td>
         <td><%= post.caption %></td>
         <td><%= post.user.email %></td>
         <td>
