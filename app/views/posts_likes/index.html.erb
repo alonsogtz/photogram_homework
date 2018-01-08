@@ -16,8 +16,20 @@
 
       <% @posts_likes.each do |posts_like| %>
       <tr>
-        <td><%= posts_like.user.email %></td>
-        <td><%= posts_like.post.created_at %></td>
+        <td>
+          <% if posts_like.user.present? %>
+            <a href="/users/<%= posts_like.user.id %>">
+              <%= posts_like.user.email %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if posts_like.post.present? %>
+            <a href="/posts/<%= posts_like.post.id %>">
+              <%= posts_like.post.created_at %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/posts_likes/<%= posts_like.id %>" class="btn btn-primary">Show</a>
           <a href="/posts_likes/<%= posts_like.id %>/edit" class="btn btn-warning">Edit</a>

@@ -17,8 +17,20 @@
 
       <% @comments.each do |comment| %>
       <tr>
-        <td><%= comment.post.created_at %></td>
-        <td><%= comment.commenter.email %></td>
+        <td>
+          <% if comment.post.present? %>
+            <a href="/posts/<%= comment.post.id %>">
+              <%= comment.post.created_at %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if comment.commenter.present? %>
+            <a href="/users/<%= comment.commenter.id %>">
+              <%= comment.commenter.email %>
+            </a>
+          <% end %>
+        </td>
         <td><%= comment.comment %></td>
         <td>
           <a href="/comments/<%= comment.id %>" class="btn btn-primary">Show</a>

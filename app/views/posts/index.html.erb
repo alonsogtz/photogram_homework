@@ -19,7 +19,13 @@
       <tr>
         <td><img src='<%= post.image %>' class='img-responsive'></td>
         <td><%= post.caption %></td>
-        <td><%= post.user.email %></td>
+        <td>
+          <% if post.user.present? %>
+            <a href="/users/<%= post.user.id %>">
+              <%= post.user.email %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/posts/<%= post.id %>" class="btn btn-primary">Show</a>
           

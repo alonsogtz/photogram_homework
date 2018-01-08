@@ -16,8 +16,20 @@
 
       <% @comment_likes.each do |comment_like| %>
       <tr>
-        <td><%= comment_like.user.email %></td>
-        <td><%= comment_like.comment.post_id %></td>
+        <td>
+          <% if comment_like.user.present? %>
+            <a href="/users/<%= comment_like.user.id %>">
+              <%= comment_like.user.email %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if comment_like.comment.present? %>
+            <a href="/comments/<%= comment_like.comment.id %>">
+              <%= comment_like.comment.post_id %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/comment_likes/<%= comment_like.id %>" class="btn btn-primary">Show</a>
           <a href="/comment_likes/<%= comment_like.id %>/edit" class="btn btn-warning">Edit</a>
